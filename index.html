@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Reference</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>JavaScript DOM Cheat Sheet</h1>
+        <input type="text" id="search" placeholder="Search Topics...">
+    </header>
+
+    <main>
+        <!-- Selecting Elements -->
+        <section class="topic" data-topic="selecting-elements">
+            <h2>Selecting Elements</h2>
+            <div class="content">
+                <p>How to select DOM elements using methods like <code>getElementById</code>, <code>querySelector</code>, and <code>querySelectorAll</code>.</p>
+                <div class="code-snippet">
+                    <pre>
+<code>// Select by ID
+document.getElementById('myElement');
+
+// Select by class
+document.querySelector('.myClass');
+
+// Select multiple elements by tag
+document.querySelectorAll('div');</code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Manipulating Elements -->
+        <section class="topic" data-topic="manipulating-elements">
+            <h2>Manipulating Elements</h2>
+            <div class="content">
+                <p>Change text content, HTML, attributes, and styles of elements.</p>
+                <div class="code-snippet">
+                    <pre>
+<code>// Change text content
+element.innerText = 'New Text';
+
+// Change HTML content
+element.innerHTML = '<span>New HTML</span>';
+
+// Change attributes
+element.setAttribute('src', 'image.jpg');
+
+// Change style
+element.style.color = 'blue';</code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Handling -->
+        <section class="topic" data-topic="event-handling">
+            <h2>Event Handling</h2>
+            <div class="content">
+                <p>Respond to user interactions using event listeners. Common event types include <code>click</code>, <code>submit</code>, <code>keydown</code>, and more.</p>
+                <div class="code-snippet">
+                    <pre>
+<code>// Click event
+element.addEventListener('click', function() {
+  alert('Element clicked!');
+});
+
+// Form submission event
+formElement.addEventListener('submit', function(e) {
+  e.preventDefault(); // Prevent default form submission
+  console.log('Form submitted');
+});
+
+// Keydown event
+document.addEventListener('keydown', function(e) {
+  console.log('Key pressed: ' + e.key);
+});</code>
+                    </pre>
+                </div>
+                <p><strong>Common Event Types:</strong></p>
+                <ul>
+                    <li><code>click</code> - Triggered by a mouse click</li>
+                    <li><code>mouseover</code> - Triggered when the mouse is over an element</li>
+                    <li><code>keydown</code> / <code>keyup</code> - Triggered when a key is pressed/released</li>
+                    <li><code>submit</code> - Triggered when a form is submitted</li>
+                    <li><code>focus</code> / <code>blur</code> - Triggered when an element gains/loses focus</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Traversing the DOM -->
+        <section class="topic" data-topic="dom-traversal">
+            <h2>Traversing the DOM</h2>
+            <div class="content">
+                <p>Navigate the DOM using <code>parentNode</code>, <code>children</code>, <code>nextElementSibling</code>, etc.</p>
+                <div class="code-snippet">
+                    <pre>
+<code>// Access parent element
+let parent = element.parentNode;
+
+// Access children
+let children = element.children;
+
+// Get the next sibling element
+let nextSibling = element.nextElementSibling;
+
+// Get the previous sibling element
+let prevSibling = element.previousElementSibling;</code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Creating and Removing Elements -->
+        <section class="topic" data-topic="creating-elements">
+            <h2>Creating and Removing Elements</h2>
+            <div class="content">
+                <p>Dynamically create and remove elements from the DOM.</p>
+                <div class="code-snippet">
+                    <pre>
+<code>// Create a new element
+let newElement = document.createElement('div');
+newElement.innerText = 'Hello World';
+document.body.appendChild(newElement);
+
+// Remove an element
+let element = document.getElementById('myElement');
+element.remove();</code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Event Delegation -->
+        <section class="topic" data-topic="event-delegation">
+            <h2>Event Delegation</h2>
+            <div class="content">
+                <p>Use event delegation to handle events for dynamically created elements by assigning the listener to a parent element.</p>
+                <div class="code-snippet">
+                    <pre>
+<code>// Event delegation example
+document.querySelector('ul').addEventListener('click', function(event) {
+  if (event.target.tagName === 'LI') {
+    console.log('List item clicked: ' + event.target.innerText);
+  }
+});</code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Working with Forms -->
+        <section class="topic" data-topic="working-with-forms">
+            <h2>Working with Forms</h2>
+            <div class="content">
+                <p>Handle form data, input events, and validation using DOM methods.</p>
+                <div class="code-snippet">
+                    <pre>
+<code>// Access form input values
+let nameInput = document.querySelector('input[name="name"]').value;
+
+// Validate form
+if (nameInput === '') {
+  console.log('Name is required');
+} else {
+  console.log('Form is valid');
+}</code>
+                    </pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

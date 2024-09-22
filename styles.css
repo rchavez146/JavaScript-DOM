@@ -1,0 +1,88 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+#search {
+    padding: 10px;
+    width: 90%;
+    max-width: 400px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+}
+
+main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+section.topic {
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+section.topic h2 {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+section.topic .content {
+    padding: 20px;
+    display: none;
+}
+
+section.topic.active .content {
+    display: block;
+}
+
+.code-snippet {
+    background-color: #f0f0f0;
+    border-left: 4px solid #007BFF;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.code-snippet pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    section.topic h2 {
+        font-size: 1.2em;
+    }
+}
